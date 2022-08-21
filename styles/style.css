@@ -1,0 +1,12 @@
+.card.header-card{
+   background-color: #000000;
+}
+.banner-title{
+   font-family: 'Berkshire Swash',cursive;
+   font-size: 64px;
+   color: #FF5E19;
+}
+.banner-p{
+   font-family: 'Poppins', sans-serif;
+   font-size: 16px;
+}
