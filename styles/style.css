@@ -1,12 +1,18 @@
-.card.header-card{
+body {
+   font-family: "Poppins", sans-serif;
+}
+.card.card-bg {
    background-color: #000000;
 }
-.banner-title{
-   font-family: 'Berkshire Swash',cursive;
+.banner-title {
+   font-family: "Berkshire Swash", cursive;
    font-size: 64px;
-   color: #FF5E19;
+   color: #ff5e19;
 }
-.banner-p{
-   font-family: 'Poppins', sans-serif;
+.banner-p {
    font-size: 16px;
+}
+.btn {
+   font-weight: 600;
+   letter-spacing: 1px;
 }
