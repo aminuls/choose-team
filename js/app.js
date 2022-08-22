@@ -17,18 +17,26 @@ function playerExpenses() {
    return playerExpense.innerText;
 }
 document.getElementById("calc-btn").addEventListener("click", function () {
-   playerExpenses();
+   const playerPrice = parseInt(document.getElementById("player-price").value === "" ? "0" : document.getElementById("player-price").value);
+   if (playerPrice >= 0) {
+      playerExpenses();
+   } else {
+      alert("Please Input Positive Number to this Input Field")
+   }
 });
 
 document.getElementById("calc-total").addEventListener("click", function () {
    const playerExpense = parseInt(playerExpenses());
    const managerPrice = parseInt(document.getElementById("manager-price").value === "" ? "0" : document.getElementById("manager-price").value);
    const couchPrice = parseInt(document.getElementById("couch-price").value === "" ? "0" : document.getElementById("couch-price").value);
-
-   document.getElementById("total-expense").innerText = playerExpense + managerPrice + couchPrice;
-   console.log(typeof playerExpense);
-   console.log(typeof managerPrice);
-   console.log(typeof couchPrice);
+   if (playerExpense >= 0 && managerPrice >= 0 && couchPrice >= 0) {
+      document.getElementById("total-expense").innerText = playerExpense + managerPrice + couchPrice;
+      console.log(typeof playerExpense);
+      console.log(typeof managerPrice);
+      console.log(typeof couchPrice);
+   } else {
+      alert("Please Input Positive Number to the all Input Field")
+   }
 });
 
 const calcBtn = document.getElementById("calc-btn");
