@@ -1,3 +1,11 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
 body {
    font-family: "Poppins", sans-serif;
 }
@@ -15,4 +23,27 @@ body {
 .btn {
    font-weight: 600;
    letter-spacing: 1px;
+}
+.underline{
+   text-decoration: underline solid #ff5e19 3px;
+}
+ol{
+   list-style-type: decimal-leading-zero;
+}
+ol li{
+   padding: 10px 0;
+   font-weight: 200;
+}
+.field-style{
+   font-weight: 200;
+   font-size: 18px;
+}
+input{
+   width: 100px;
+   height: 40px;
+   background-color: transparent;
+   outline: none;
+   border: 1px solid #fff;
+   color: #ffffff;
+   padding: 0px 10px;
 }
