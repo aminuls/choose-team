@@ -36,14 +36,14 @@
          <section class="container text-light my-5">
             <div class="row g-4">
                <div class="col-12 col-sm-6 col-md-8 col-lg-9">
-                  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="parent-card">
                      <div class="col">
                         <div class="card h-100 rounded-0 border-secondary card-bg">
                            <img src="./images/Rectangle 1.png" class="card-img-top rounded-0" alt="..." />
                            <div class="card-body d-flex flex-column align-items-center px-0">
                               <h4 class="card-title">Lionel Messi</h4>
                               <p class="card-text text-muted fs-5"><small>36 Goals </small>&#8226<small> 120 Assist</small></p>
-                              <button type="button" class="btn btn-danger btn-lg rounded-0 px-5">SELECT</button>
+                              <button type="button" class="btn btn-danger btn-lg rounded-0 px-5" onclick="selectPlayer(this)">SELECT</button>
                            </div>
                         </div>
                      </div>
@@ -53,7 +53,7 @@
                            <div class="card-body d-flex flex-column align-items-center px-0">
                               <h4 class="card-title">Neymar Jr</h4>
                               <p class="card-text text-muted fs-5"><small>36 Goals </small>&#8226<small> 120 Assist</small></p>
-                              <button type="button" class="btn btn-danger btn-lg rounded-0 px-5">SELECT</button>
+                              <button type="button" class="btn btn-danger btn-lg rounded-0 px-5" onclick="selectPlayer(this)">SELECT</button>
                            </div>
                         </div>
                      </div>
@@ -63,7 +63,7 @@
                            <div class="card-body d-flex flex-column align-items-center px-0">
                               <h4 class="card-title">Kylian Mbappé</h4>
                               <p class="card-text text-muted fs-5"><small>36 Goals </small>&#8226<small> 120 Assist</small></p>
-                              <button type="button" class="btn btn-danger btn-lg rounded-0 px-5">SELECT</button>
+                              <button type="button" class="btn btn-danger btn-lg rounded-0 px-5" onclick="selectPlayer(this)">SELECT</button>
                            </div>
                         </div>
                      </div>
@@ -73,7 +73,7 @@
                            <div class="card-body d-flex flex-column align-items-center px-0">
                               <h4 class="card-title">Vítor Machado</h4>
                               <p class="card-text text-muted fs-5"><small>36 Goals </small>&#8226<small> 120 Assist</small></p>
-                              <button type="button" class="btn btn-danger btn-lg rounded-0 px-5">SELECT</button>
+                              <button type="button" class="btn btn-danger btn-lg rounded-0 px-5" onclick="selectPlayer(this)">SELECT</button>
                            </div>
                         </div>
                      </div>
@@ -83,7 +83,7 @@
                            <div class="card-body d-flex flex-column align-items-center px-0">
                               <h4 class="card-title">Sergio Ramos</h4>
                               <p class="card-text text-muted fs-5"><small>36 Goals </small>&#8226<small> 120 Assist</small></p>
-                              <button type="button" class="btn btn-danger btn-lg rounded-0 px-5">SELECT</button>
+                              <button type="button" class="btn btn-danger btn-lg rounded-0 px-5" onclick="selectPlayer(this)">SELECT</button>
                            </div>
                         </div>
                      </div>
@@ -93,7 +93,7 @@
                            <div class="card-body d-flex flex-column align-items-center px-0">
                               <h4 class="card-title">Renato Sanches</h4>
                               <p class="card-text text-muted fs-5"><small>36 Goals </small>&#8226<small> 120 Assist</small></p>
-                              <button type="button" class="btn btn-danger btn-lg rounded-0 px-5">SELECT</button>
+                              <button type="button" class="btn btn-danger btn-lg rounded-0 px-5" onclick="selectPlayer(this)">SELECT</button>
                            </div>
                         </div>
                      </div>
@@ -103,14 +103,9 @@
                   <div class="row row-cols-1 g-4">
                      <div class="col">
                         <div class="card rounded-0 border-secondary card-bg">
-                           <div class="card-body px-0">
+                           <div class="card-body px-0 top">
                               <h3 class="card-title text-center underline">Top Player - V</h3>
-                              <ol class="ms-3 my-4 fs-5">
-                                 <li>Lionel Messi</li>
-                                 <li>Neymar Jr</li>
-                                 <li>Kylian Mbappé</li>
-                                 <li>Vítor Machado</li>
-                                 <li>Sergio Ramos</li>
+                              <ol class="ms-3 my-4 fs-5" id="list">
                               </ol>
                            </div>
                         </div>
@@ -123,10 +118,10 @@
                                  <label for="player-price">Per Player</label>
                                  <input type="number" name="" id="player-price">
                               </div>
-                              <button type="button" class="btn btn-danger btn-lg rounded-0 px-4">Calculate</button>
+                              <button type="button" class="btn btn-danger btn-lg rounded-0 px-4" id="calc-btn">Calculate</button>
                               <div class="text-start d-flex justify-content-between align-items-center field-style my-3">
                                  <label for="player-expense">Player Expenses</label>
-                                 <div id="player-expense">$ <span class="fw-normal">232</span></div>
+                                 <div class="expense">$ <span id="player-expense">0</span></div>
                               </div>
                               <div class="text-start d-flex justify-content-between align-items-center field-style my-3">
                                  <label for="manager-price">Manager</label>
@@ -136,10 +131,10 @@
                                  <label for="couch-price">Couch</label>
                                  <input type="number" name="" id="couch-price">
                               </div>
-                              <button type="button" class="btn btn-danger btn-lg rounded-0 px-2">Calculate Total</button>
+                              <button type="button" class="btn btn-danger btn-lg rounded-0 px-2" id="calc-total">Calculate Total</button>
                               <div class="text-start d-flex justify-content-between align-items-center field-style my-3">
                                  <label for="total-expense" class="fw-normal">Total</label>
-                                 <div id="total-expense" class="fw-semibold">$ <span>232</span></div>
+                                 <div class="fw-semibold">$ <span id="total-expense">0</span></div>
                               </div>
                            </div>
                         </div>

@@ -50,3 +50,13 @@ input{
 #total-expense{
    color: #ff5e19;
 }
+.top{
+   min-height: 360px;
+}
+.btn:disabled{
+   background-color: #6c757d;
+   border-color: #6c757d;
+}
+.expense{
+   font-weight: 400;
+}
