@@ -18,10 +18,12 @@ function playerExpenses() {
 }
 document.getElementById("calc-btn").addEventListener("click", function () {
    const playerPrice = parseInt(document.getElementById("player-price").value === "" ? "0" : document.getElementById("player-price").value);
-   if (playerPrice >= 0) {
+   if (playerPrice > 0 && list.children.length > 0) {
       playerExpenses();
+   } else if (list.children.length < 1) {
+      alert("Please Select the Players First!");
    } else {
-      alert("Please Input Positive Number to this Input Field")
+      alert("Please Input Positive Number to this Input Field");
    }
 });
 
@@ -29,13 +31,10 @@ document.getElementById("calc-total").addEventListener("click", function () {
    const playerExpense = parseInt(playerExpenses());
    const managerPrice = parseInt(document.getElementById("manager-price").value === "" ? "0" : document.getElementById("manager-price").value);
    const couchPrice = parseInt(document.getElementById("couch-price").value === "" ? "0" : document.getElementById("couch-price").value);
-   if (playerExpense >= 0 && managerPrice >= 0 && couchPrice >= 0) {
+   if (playerExpense > 0 && managerPrice >= 0 && couchPrice >= 0) {
       document.getElementById("total-expense").innerText = playerExpense + managerPrice + couchPrice;
-      console.log(typeof playerExpense);
-      console.log(typeof managerPrice);
-      console.log(typeof couchPrice);
    } else {
-      alert("Please Input Positive Number to the all Input Field")
+      alert("Please Input Positive Number to the all Input Field");
    }
 });
 
